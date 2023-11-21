@@ -3,10 +3,12 @@
     <h1 class="text-center font-bold m-5 text-4xl">Track Your Manga List</h1>
 
     <form
+    v-auto-animate
       class="flex justify-center my-0 mx-auto"
       @submit.prevent="searchManga"
     >
       <UInput
+      v-auto-animate
         v-model="query"
         @input="handelInput"
         @keypress="searchManga"
@@ -17,10 +19,10 @@
         trailing
         placeholder="Search for a Manga.."
       />
-      <UButton color="violet" type="submit" variant="solid">Search</UButton>
+      <UButton class="ml-1" color="violet" type="submit" variant="solid">Search</UButton>
     </form>
 
-    <div class="results z-50" v-if="search_result.length > 0">
+    <div v-auto-animate class="results z-50" v-if="search_result.length > 0">
       <div v-for="manga in search_result" :key="manga.mal_id" class="result">
         <img :src="manga.images.jpg.image_url" alt="" />
         <div class="details">
@@ -35,7 +37,7 @@
       </div>
     </div>
 
-    <div class="mymanga" v-if="mangaStore.myManga.length > 0">
+    <div v-auto-animate class="mymanga" v-if="mangaStore.myManga.length > 0">
       <h2 class="text-gray:75 mx-auto my-0">My Manga</h2>
       <div v-for="(manga, i) in my_manga_asc" :key="i" class="manga">
         <img :src="manga.image" alt="" />
@@ -80,7 +82,7 @@
       </div>
     </div>
 
-    <div class="mymanga" v-if="finishedManga.length>0">
+    <div v-auto-animate class="mymanga" v-if="finishedManga.length>0">
       <h2>You Finished this manga</h2>
       <div v-for="(manga, i) in finishedManga" :key="i" class="manga">
         <img :src="manga.image" alt="" />

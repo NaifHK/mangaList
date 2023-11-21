@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="text-center my-5 font-bold text-4xl">{{ id_name }}</h1>
-    <div class="ml-5 mr-5 grid gap-2 grid-cols-5 justify-center align-middle">
+    <div v-auto-animate class="ml-5 mr-5 grid gap-2 grid-cols-5 justify-center align-middle">
       <div v-for="manga in allMangas" :key="manga.mal_id" class="manga-item mt-5">
         <div class="border-gray-600 flex flex-col items-center">
           <img class="w-40 h-50 rounded-2xl" :src="manga.images.jpg.image_url" alt="" />

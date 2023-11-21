@@ -2,6 +2,7 @@
   <div>
     <h1 class="text-center my-5 font-bold text-4xl">Genres</h1>
     <UInput
+    v-auto-animate
       v-model="query"
       icon="i-heroicons-magnifying-glass-20-solid"
       size="lg"
@@ -10,7 +11,7 @@
       trailing
       placeholder="Search for a genre.."
     />
-    <div class="grid mx-2 my-0">
+    <div v-auto-animate class="grid mx-2 my-0">
       <button
         v-for="genre in allgenres"
         :key="genre.mal_id"
