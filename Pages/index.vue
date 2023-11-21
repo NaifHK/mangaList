@@ -1,5 +1,5 @@
 <template>
-  <main class="my-0 mx-auto">
+  <main  v-auto-animate class="my-0 mx-auto">
     <h1 class="text-center font-bold m-5 text-4xl">Track Your Manga List</h1>
 
     <form
@@ -84,7 +84,7 @@
 
     <div v-auto-animate class="mymanga" v-if="finishedManga.length>0">
       <h2>You Finished this manga</h2>
-      <div v-for="(manga, i) in finishedManga" :key="i" class="manga">
+      <div v-auto-animate v-for="(manga, i) in finishedManga" :key="i" class="manga">
         <img :src="manga.image" alt="" />
         <h3>{{ manga.title }}</h3>
         <div class="flex-1"></div>
